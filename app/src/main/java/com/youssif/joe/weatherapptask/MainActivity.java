@@ -40,9 +40,10 @@ public class MainActivity extends AppCompatActivity {
     private void buildLocationCallBack() {
 
 
+        /*
                 Common.lat = "29.9978";
                 Common.lon = "31.0529";
-
+*/
                 viewPager = findViewById(R.id.view_pager);
                 setupViewPager(viewPager);
                 tabLayout = findViewById(R.id.tabs);

@@ -1,5 +1,6 @@
 package com.youssif.joe.weatherapptask.Retrofit;
 
+import com.youssif.joe.weatherapptask.Model.WeatherCitiesResult;
 import com.youssif.joe.weatherapptask.Model.WeatherForecastResult;
 import com.youssif.joe.weatherapptask.Model.WeatherResult;
 
@@ -21,6 +22,12 @@ public interface IOpenWeatherMap {
                                                                  @Query("lon") String lng,
                                                                  @Query("appid") String appid,
                                                                  @Query("units") String unit);
+
+
+    @GET("group")
+    Observable<WeatherCitiesResult> getCitiesWeatherByID(@Query("id") String id,
+                                                         @Query("appid") String appid,
+                                                         @Query("units") String unit);
 
 
 

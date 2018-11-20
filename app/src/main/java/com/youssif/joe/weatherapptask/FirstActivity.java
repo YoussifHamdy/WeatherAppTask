@@ -1,14 +1,17 @@
 package com.youssif.joe.weatherapptask;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 
 import com.youssif.joe.weatherapptask.Adapter.WeatherCitiesAdapter;
 import com.youssif.joe.weatherapptask.Commen.Common;
@@ -46,6 +49,15 @@ public class FirstActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fab =  findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstActivity.this,ContactActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         recyclerView = findViewById(R.id.citiesRecyclerView);

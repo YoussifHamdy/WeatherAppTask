@@ -88,8 +88,8 @@ public class TodayWeatherFragment extends Fragment {
 
     private void getWeatherInformation() {
 
-        compositeDisposable.add(mService.getWeatherByLatLng(String.valueOf(Common.current_Location.getLatitude()),
-                String.valueOf(Common.current_Location.getLongitude()) ,
+        compositeDisposable.add(mService.getWeatherByLatLng(String.valueOf(Common.lat),
+                String.valueOf(Common.lon) ,
                 Common.APP_ID ,
                 "metric").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<WeatherResult>() {

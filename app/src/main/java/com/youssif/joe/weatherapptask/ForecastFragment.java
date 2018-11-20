@@ -17,7 +17,6 @@ import com.youssif.joe.weatherapptask.Model.WeatherForecastResult;
 import com.youssif.joe.weatherapptask.Retrofit.IOpenWeatherMap;
 import com.youssif.joe.weatherapptask.Retrofit.RetrofitClient;
 
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
@@ -77,8 +76,8 @@ public class ForecastFragment extends Fragment {
 
     private void getForecastWeatherInformation() {
         compositeDisposable.add(mService.getForecastWeatherByLatLng(
-                String.valueOf(Common.current_Location.getLatitude()) ,
-                String.valueOf(Common.current_Location.getLongitude()),
+                Common.lat ,
+                Common.lon,
                 Common.APP_ID,
                 "metric")
                 .subscribeOn(Schedulers.io())

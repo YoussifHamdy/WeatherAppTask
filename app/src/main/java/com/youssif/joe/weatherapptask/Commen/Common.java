@@ -1,6 +1,5 @@
 package com.youssif.joe.weatherapptask.Commen;
 
-import android.location.Location;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

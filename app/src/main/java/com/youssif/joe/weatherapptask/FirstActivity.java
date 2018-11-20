@@ -10,7 +10,6 @@ import android.util.Log;
 import com.youssif.joe.weatherapptask.Adapter.WeatherCitiesAdapter;
 import com.youssif.joe.weatherapptask.Commen.Common;
 import com.youssif.joe.weatherapptask.Model.WeatherCitiesResult;
-import com.youssif.joe.weatherapptask.Model.WeatherForecastResult;
 import com.youssif.joe.weatherapptask.Retrofit.IOpenWeatherMap;
 import com.youssif.joe.weatherapptask.Retrofit.RetrofitClient;
 
@@ -22,6 +21,7 @@ import retrofit2.Retrofit;
 
 public class FirstActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
 
     CompositeDisposable compositeDisposable;
     IOpenWeatherMap mService;
@@ -31,6 +31,9 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
 
         recyclerView = findViewById(R.id.citiesRecyclerView);

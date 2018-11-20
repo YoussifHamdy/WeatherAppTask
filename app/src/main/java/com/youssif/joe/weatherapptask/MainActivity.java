@@ -6,10 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 import com.youssif.joe.weatherapptask.Adapter.ViewPagerAdapter;
-import com.youssif.joe.weatherapptask.Commen.Common;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,10 +38,6 @@ public class MainActivity extends AppCompatActivity {
     private void buildLocationCallBack() {
 
 
-        /*
-                Common.lat = "29.9978";
-                Common.lon = "31.0529";
-*/
                 viewPager = findViewById(R.id.view_pager);
                 setupViewPager(viewPager);
                 tabLayout = findViewById(R.id.tabs);

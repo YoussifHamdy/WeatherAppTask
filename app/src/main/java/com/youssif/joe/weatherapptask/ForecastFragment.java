@@ -62,12 +62,12 @@ public class ForecastFragment extends Fragment {
         View itemView = inflater.inflate(R.layout.fragment_forecast, container, false);
 
         txt_city_name = itemView.findViewById(R.id.txt_city_name);
-        txt_geo_coord = itemView.findViewById(R.id.txt_geo_coord);
+        txt_geo_coord = itemView.findViewById(R.id.txt_city_coord);
 
 
         recycler_forecast = itemView.findViewById(R.id.recycler_forecast);
         recycler_forecast.setHasFixedSize(true);
-        recycler_forecast.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL , false));
+        recycler_forecast.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL , false));
         
         getForecastWeatherInformation();
         

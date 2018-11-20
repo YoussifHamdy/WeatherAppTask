@@ -20,6 +20,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
             android:text="Weather in London,GB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -57,6 +58,7 @@
             android:textStyle="bold"
             android:text="Weather in London,GB"
             android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -64,6 +66,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
             android:text="Weather in London,GB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

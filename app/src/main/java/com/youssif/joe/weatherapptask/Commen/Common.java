@@ -9,6 +9,7 @@ public class Common {
     public static final String APP_ID = "d51f03a139172ee658b9dbe8d201f9f1";
     public static String lat = "";
     public static String lon = "";
+    public static int cacheSize = 10 * 1024 * 1024;
 
     public static String convertUnixToDate(long dt) {
         Date date = new Date(dt*1000L);

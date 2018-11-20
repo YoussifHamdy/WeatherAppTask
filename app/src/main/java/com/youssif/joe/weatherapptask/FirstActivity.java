@@ -29,10 +29,11 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class FirstActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    int cacheSize = 10 * 1024 * 1024;
+
 
     CompositeDisposable compositeDisposable;
     IOpenWeatherMap mService;
@@ -50,29 +51,15 @@ public class FirstActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.citiesRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL , false));
-        
 
-
-
+        setupRetrofitAndOkHttp();
         getCitiesWeatherInformation();
         
     }
 
-    private boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-    }
+    private void setupRetrofitAndOkHttp() {
 
-
-
-
-
-    private void getCitiesWeatherInformation() {
-
-
-        Cache cache = new Cache(getCacheDir(), cacheSize);
+        Cache cache = new Cache(getCacheDir(), Common.cacheSize);
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .cache(cache)
@@ -104,6 +91,22 @@ public class FirstActivity extends AppCompatActivity {
         compositeDisposable = new CompositeDisposable();
         Retrofit retrofit = builder.build();
         mService = retrofit.create(IOpenWeatherMap.class);
+
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+
+
+    private void getCitiesWeatherInformation() {
+
+
+
 
         compositeDisposable.add(mService.getCitiesWeatherByID(
                 "524901,703448,2643743,4396915,6155070" ,
